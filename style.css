@@ -4,7 +4,7 @@
     --my-gray: #495057;
 }
 
-*:focus{
+*:focus {
     outline: none;
 }
 
@@ -20,7 +20,44 @@ header {
     padding: 3% 0 0 3%;
 }
 
-main{
+.shake-left-right:hover {
+    animation: shake-left-right 0.8s linear both;
+}
+
+@keyframes shake-left-right {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%
+    }
+
+    10% {
+        transform: rotate(8deg)
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: rotate(-10deg)
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotate(10deg)
+    }
+
+    80% {
+        transform: rotate(-8deg)
+    }
+
+    90% {
+        transform: rotate(8deg)
+    }
+}
+
+main {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -33,7 +70,7 @@ main{
     flex-wrap: wrap;
 }
 
-#input-data{
+#input-data {
     height: 54vh;
     width: 40vw;
     background-color: #E5E5E5;
@@ -43,7 +80,7 @@ main{
     resize: none;
 }
 
-#input-data::placeholder{
+#input-data::placeholder {
     color: var(--my-dark-blue);
     font-size: 2rem;
     font-family: var(--my-font);
@@ -57,7 +94,7 @@ main{
     opacity: 0.8;
 }
 
-#error-message::before{
+#error-message::before {
     content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2z"%2F%3E%3C%2Fsvg%3E');
     margin: 1%;
     vertical-align: middle;
@@ -82,19 +119,20 @@ button:hover {
     filter: brightness(0.85);
     transform: scale(1.017);
     transition: 0.2s;
-  }  
+}
 
 #encrypt {
     background-color: var(--my-dark-blue);
     color: white;
 }
 
-#decrypt, #copy {
+#decrypt,
+#copy {
     background-color: #D8DFE8;
     color: var(--my-dark-blue);
 }
 
-.output-area{
+.output-area {
     width: 30vw;
     height: 93vh;
     display: flex;
@@ -112,7 +150,7 @@ button:hover {
     background-image: url('placeholder_image.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size:65%;
+    background-size: 65%;
     border-radius: 2rem;
     resize: none;
     border: none;
