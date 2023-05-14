@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <img src="./Logo.png" alt="">
+    </header>
+    <main>
+        <section class="input-area">
+            <textarea id="input-data" type="text" placeholder="Ingrese texto aquí" cols="30" rows="10"></textarea>
+            <p id="error-message">Sólo letras minúsculas y sin acentos</p>
+            <div class="buttons">            
+                <button id="encrypt">Encriptar</button>
+                <button id="decrypt">Desencriptar</button>
+            </div>
+        </section>
+        <section class="output-area">
+            <textarea name="" id="output" cols="30" rows="10"></textarea>
+            <button id="copy">Copiar</button>
+        </section>
+    </main>
+    <footer>
+        Autor: Alan Sanroman
+    </footer>
+    
+</body>
+<script src="./script.js"></script>
+</html>
