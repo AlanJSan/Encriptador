@@ -132,6 +132,11 @@ button:hover {
     color: var(--my-dark-blue);
 }
 
+#copy {
+    display: none;
+    margin: auto;
+}
+
 .output-area {
     width: 30vw;
     height: 93vh;
@@ -158,12 +163,63 @@ button:hover {
     color: var(--my-gray);
 }
 
-#copy {
-    margin: auto;
-}
-
 footer {
     text-align: center;
     color: var(--my-dark-blue);
     font-weight: bold;
+}
+
+@media screen and (width < 768px){
+    header {
+        padding: 2% 0 0 0;
+    }
+
+    img {
+        margin-top: 10%;
+    }
+
+    main {
+        flex-direction: column;
+        align-items:inherit;
+        justify-content:inherit;
+        padding: 4%;
+
+    }
+
+    .input-area {
+        padding: 0;
+    }
+
+    #input-data {
+        width: auto;
+        padding-top: 10%;
+    }
+
+    button {
+        width: 50%;
+    }
+
+    .buttons {
+        gap: 5%;
+    }
+
+    .output-area {
+        width: auto;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    #output {
+        background-image: url('./placeholder_image+copy.svg.jpg');
+    }
+
+    #copy {
+        background-color: white;
+        margin: 5% auto;
+
+    }
+}
+
+@media screen and (width < 375px){
+    
 }

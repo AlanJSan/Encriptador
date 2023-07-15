@@ -74,8 +74,12 @@ encryptBtn.addEventListener('click', encryptDecrypt)
 decryptBtn.addEventListener('click', encryptDecrypt)
 copyBtn.addEventListener('click', copy);
 input.addEventListener('input', defaultField);
-textarea.addEventListener('focus', () => textarea.style.backgroundImage = 'none')
+textarea.addEventListener('focus', () => {
+    textarea.style.backgroundImage = 'none'; 
+    copyBtn.style.display = "block";
+})
 textarea.addEventListener('blur', () => {
     if(textarea.value === '')
-    textarea.style.backgroundImage = "url('placeholder_image.svg')";
+    textarea.style.backgroundImage = screen.width > 767 ? "url('placeholder_image.svg')" : "url('placeholder_image+copy.svg.jpg')";
+    copyBtn.style.display = "none";
 });
