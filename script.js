@@ -48,24 +48,23 @@ function encryptDecrypt(e) {
         const response = text.replaceAll(regex, (match) => flag ? encryptMap.get(match) : decryptMap.get(match));
         textarea.value = (response === input.value) ? textarea.value : response;
         textarea.focus();
-        input.focus();
 }
 
 function copy() {
-    navigator.clipboard
-        .writeText(textarea.value)
-        .then(
-            (clipText) => (clipText = textarea.value)
-        );
-    navigator.clipboard
-        .readText()
-        .then(
-            (clipText) => (input.value = clipText)
-        );
+    input.value = textarea.value;
+    // navigator.clipboard
+    //     .writeText(textarea.value)
+    //     .then(
+    //         (clipText) => (clipText = textarea.value)
+    //     );
+    // navigator.clipboard
+    //     .readText()
+    //     .then(
+    //         (clipText) => (input.value = clipText)
+    //     );
 }
 
 function defaultField() {
-    //errorMessage.style.display = 'none';
     input.style.borderColor = '';
     input.style.backgroundColor = '';
   }
@@ -79,7 +78,8 @@ textarea.addEventListener('focus', () => {
     copyBtn.style.display = "block";
 })
 textarea.addEventListener('blur', () => {
-    if(textarea.value === '')
-    textarea.style.backgroundImage = screen.width > 767 ? "url('placeholder_image.svg')" : "url('placeholder_image+copy.svg.jpg')";
-    copyBtn.style.display = "none";
+    if(textarea.value === ''){
+        textarea.style.backgroundImage = screen.width > 767 ? "url('placeholder_image.svg')" : "url('placeholder_image+copy.svg.jpg')";
+        copyBtn.style.display = "none";
+    }
 });
