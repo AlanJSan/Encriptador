@@ -87,6 +87,10 @@ main {
     font-weight: 600;
 }
 
+#input-data:focus::placeholder {
+    color: transparent;
+  }
+
 #error-message {
     color: var(--my-gray);
     font-weight: 400;
@@ -169,7 +173,7 @@ footer {
     font-weight: bold;
 }
 
-@media screen and (width < 768px){
+@media screen and (width <= 768px){
     header {
         padding: 2% 0 0 0;
     }
@@ -220,6 +224,47 @@ footer {
     }
 }
 
-@media screen and (width < 375px){
-    
+@media screen and (width <= 375px){
+    main {
+        padding: 0;
+    }
+    img {
+        margin: 5% 0 0 -7%;
+    }
+
+    .input-area {
+        padding: 18px;
+    }
+
+    #input-data {
+        height: auto;
+    }
+
+    #input-data::placeholder {
+        padding-top: 10%;
+        font-size: 2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons > button {
+        width: 62%;
+    }
+
+    #encrypt {
+        margin-bottom: 5%;
+
+    }
+
+    .output-area {
+        margin: auto;
+        width: 90%;
+        height: 24vh;
+    }
+
+    footer {
+        margin: 5%;
+    }
 }
